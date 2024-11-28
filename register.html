@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <img src="logo.webp" alt="Logo" class="logo">
+</header>
+<body>
+    <main>
+        <form id="registerForm">
+            <h2>Registrar Usuario</h2>
+            <label for="newUsername">Nuevo Usuario</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+
+            <label for="newPassword">Nueva Contraseña</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <label for="confirmNewPassword">Confirmar Contraseña</label>
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+
+            <button type="submit">Registrar</button>
+           <center><a href="index.html">Iniciar Sesion</a></center> 
+            <p id="message"></p>
+        </form>
+    </main>
+    <script src="register.js"></script>
+</body>
+</html>

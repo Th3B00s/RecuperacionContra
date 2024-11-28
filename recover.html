@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.webp" alt="Logo" class="logo">
+    </header>
+    <main>
+        <form id="recoverForm">
+            <h2>Recuperar Contraseña</h2>
+            <label for="recoverUsername">Usuario</label>
+            <input type="text" id="recoverUsername" name="recoverUsername" required>
+
+            <center><button type="button" id="sendToken">Enviar Token</button></center>
+
+            <label for="token">Token</label>
+            <input type="text" id="token" name="token" required>
+
+            <label for="newPassword">Nueva Contraseña</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+
+            <button type="submit">Cambiar Contraseña</button>
+            <p id="message"></p>
+        </form>
+    </main>
+    <script src="recover.js"></script>
+</body>
+</html>

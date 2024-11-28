@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El_Tenni</title>
+    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <style>
+     
+    </style>
+</head>
+<body>
+   
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#tabla-usuarios">Tabla de Usuarios</a></li>
+                <li><a href="#" id="cart-link">Carrito (<span id="cart-count">0</span>)</a></li> <!-- Contador de productos en el carrito -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Carrito emergente -->
+    <div id="cart">
+        <h4>Carrito</h4>
+        <ul id="cart-items">
+            <!-- Aquí se mostrarán los productos agregados al carrito -->
+        </ul>
+    </div>
+    <!-- Modal del Carrito -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Tu Carrito</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="modal-cart-items">            
+            </tbody>
+        </table>
+        <p>Total: $<span id="modal-total-cart-value">0</span></p>
+        <button id="checkout-btn">Pagar</button>
+    </div>
+</div>
+    <section id="inicio" style="margin-top: 70px;">
+       <center> <h1>Bienvenidos a The_tennis-Shop</h1>
+        <p>Encuentra los mejores tennis</p>
+    </section></center>
+    <section id="productos">
+        <div class="container mt-2">
+           <center> <h2>Nuestros Productos</h2></center>
+            <div class="row">
+                <div class="col-md-2 mb-2">
+                    <div class="card">
+                        <img src="public/images/lap.jpg" class="card-img-top" alt="Suavidad">
+                        <div class="card-body">
+                            <h5 class="card-title">Teni Suaves</h5>
+                            <p class="card-text">Loa mas comodos.</p>
+                            <button class="btn btn-primary" onclick="addToCart('Savidad')">Agregar al carrito</button>
+                            <button class="btn-event" data-animation="scale">Scale</button>
+                            <button class="btn-event" data-animation="rotate">Rotar</button>
+                            <button class="btn-event" data-animation="fade">Fade/Show</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="public/images/escritorio.jpg" class="card-img-top" alt="Colors">
+                        <div class="card-body">
+                            <h5 class="card-title">Multi color</h5>
+                            <p class="card-text">Perfecta para trabajo y entretenimiento.</p>
+                            <button class="btn btn-primary" onclick="addToCart('Colors')">Agregar al carrito</button>
+                            <button class="btn-event" data-animation="scale">Scale</button>
+                            <button class="btn-event" data-animation="rotate">Rotar</button>
+                            <button class="btn-event" data-animation="fade">Fade/Show</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md- mb-4">
+                    <div class="card">
+                        <img src="public/images/accesorio.jpg" class="card-img-top" alt="Inigualables">
+                        <div class="card-body">
+                            <h5 class="card-title">Ultimos del mercado</h5>
+                            <p class="card-text">Modelos inigualables.</p>
+                            <button class="btn btn-primary" onclick="addToCart('Inigualables')">Agregar al carrito</button>
+                            <button class="btn-event" data-animation="scale">Scale</button>
+                            <button class="btn-event" data-animation="rotate">Rotar</button>
+                            <button class="btn-event" data-animation="fade">Fade/Show</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+        <h2>Contáctanos</h2>
+        <form action="">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Tabla de Usuarios (DataTable) -->
+    <section id="tabla-usuarios">
+        <h2>Usuarios Registrados</h2>
+        <table id="datatable_users" class="display">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Ciudad</th>
+                    <th>Compañía</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody_users">
+                <!-- Los usuarios se cargarán aquí dinámicamente desde la API -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Scripts -->
+    <script src="public/js/main.js"></script>
+</body>
+</html>
